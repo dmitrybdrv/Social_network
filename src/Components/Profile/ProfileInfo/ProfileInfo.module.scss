@@ -1,0 +1,16 @@
+.profileInfoContainer {
+    background: #504945;
+
+    .avaAndDescription {
+        display: flex;
+
+        & img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+    }
+    .profileStatus{}
+    .profileName{}
+
+}
