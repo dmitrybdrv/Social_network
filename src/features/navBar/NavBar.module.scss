@@ -1,0 +1,19 @@
+nav {
+  grid-area: navBar;
+  display: grid;
+  padding: 20px;
+  background: #daab9c;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+
+  & a {
+    padding-bottom: 10px;
+
+    &:hover {
+      cursor: pointer;
+
+    }
+  }
+
+}

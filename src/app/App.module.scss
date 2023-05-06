@@ -1,0 +1,13 @@
+@import "common/Container.module";
+
+.App {
+  @include container();
+
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  grid-template-rows: 40px 2fr;
+  grid-template-areas: 'header header'
+                        'navBar content';
+  gap: 10px;
+
+}
