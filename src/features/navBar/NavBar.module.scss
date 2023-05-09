@@ -2,13 +2,15 @@ nav {
   grid-area: navBar;
   display: grid;
   padding: 20px;
-  background: #daab9c;
+  background: #fff;
   width: fit-content;
   height: fit-content;
-  border-radius: 10px;
+  border-radius: 5px;
 
   & a {
     padding-bottom: 10px;
+    text-decoration: none;
+    color: #000;
 
     &:hover {
       cursor: pointer;

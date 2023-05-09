@@ -1,10 +1,8 @@
-import {buttonClasses} from "@mui/material";
-import {appThunk} from "app/app.slice";
 import {useActions} from "common/hooks/useActions";
 import {useAppSelector} from "common/hooks/useHooks";
 import {selectIsLoggedIn} from "features/auth/auth.selector";
 import {authThunks} from "features/auth/auth.slice";
-import React, {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import style from './Header.module.scss'
 
 
@@ -15,7 +13,6 @@ export const Header: FC<PropsType> = ({}) => {
     const {logout} = useActions(authThunks)
 
 
-
     const logOutHandler = () => {
         logout()
     }
@@ -23,7 +20,7 @@ export const Header: FC<PropsType> = ({}) => {
     return (
         <header className={style.headerContainer}>
             Header
-            {isLoggedIn ? <button onClick={logOutHandler}>logout</button> : ''}
+            {isLoggedIn ? <button onClick={logOutHandler} className={style.btn}>logout</button> : ''}
         </header>
     );
 };

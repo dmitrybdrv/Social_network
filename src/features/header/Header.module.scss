@@ -1,8 +1,23 @@
 .headerContainer {
   grid-area: header;
-  background: #484a59;
-  border-radius: 10px;
+  background: #fff;
+  border-radius: 5px;
   padding: 0 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  .btn {
+
+    padding: 3px 15px;
+    background: #5c5cdc;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      background: #3535d9;
+    }
+  }
 }
