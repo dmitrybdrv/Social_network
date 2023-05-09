@@ -44,65 +44,69 @@ export const Login: React.FC<LoginPropsType> = ({}) => {
         <form onSubmit={handleSubmit(onSubmit)} className={style.formContainer}>
 
 
-                <div className={style.formTitle}>
-                    <h3>Login</h3>
-                </div>
+            <div className={style.formTitle}>
+                <h3>Login</h3>
+            </div>
 
-                <div className={style.formDescription}>
-                    <p>
-                        To log in get registered <a href={'https://social-network.samuraijs.com/'}
-                                                    target={'_blank'} rel="noreferrer">here</a>
-                    </p>
-                    <p>
-                        or use common test account credentials:
-                    </p>
-                    <p> Email: free@samuraijs.com
-                    </p>
-                    <p>
-                        Password: free
-                    </p>
-                </div>
+            <div className={style.formDescription}>
+                <p>
+                    To log in get registered <a href={'https://social-network.samuraijs.com/'}
+                                                target={'_blank'} rel="noreferrer">here</a>
+                </p>
+                <p>
+                    or use common test account credentials:
+                </p>
+                <p> Email: free@samuraijs.com
+                </p>
+                <p>
+                    Password: free
+                </p>
+            </div>
 
-                <div className={style.formInput}>
-                    <input id="email" {...register('email',
-                        {required: true, maxLength: 50,
-                            pattern: {
-                                value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-                                message: 'Email should be correct'
-                            }}
-                    )}
-                           placeholder={'Email'}
-                    />
-                    <div>
-                        {errors.email && <span style={{color: '#ee4916'}}>{errors.email.message}</span>}
-                        {errors.email && errors.email.type === "required" && <span style={{color: '#ee4916'}}>This field is required</span>}
-                    </div>
-
-                </div>
-
-                <div className={style.formInput}>
-                    <input id="pass" {...register('password',
-                        {
-                            required: true, maxLength: 50,
-                            //TODO проверка на корректность не сходится с тестовым паролем  для входа FREE
-                           /* pattern: {
-                                value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}$/,
-                                message: 'Password should be correct'
-                            }*/
+            <div className={style.formInput}>
+                <input id="email" {...register('email',
+                    {
+                        required: true, maxLength: 50,
+                        pattern: {
+                            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+                            message: 'Email should be correct'
                         }
-                    )}
-                           placeholder={'Password'}
-                           type={'password'}
-                    />
-                    <div>
-                        {errors.password && <span style={{color: '#ee4916'}}>{errors.password.message}</span>}
-                        {errors.password && errors.password.type === "required" && <span style={{color: '#ee4916'}}>This field is required</span>}
-                    </div>
+                    }
+                )}
+                       placeholder={'Email'}
+                />
+                <div>
+                    {errors.email && <span style={{color: '#ee4916'}}>{errors.email.message}</span>}
+                    {errors.email && errors.email.type === "required" &&
+                        <span style={{color: '#ee4916'}}>This field is required</span>}
                 </div>
 
-                <div className={style.formButton}>
-                    <button type={"submit"} className={style.btn}>Login</button>
+            </div>
+
+            <div className={style.formInput}>
+                <input id="pass" {...register('password',
+                    {
+                        required: true, maxLength: 50,
+                        //TODO проверка на корректность не сходится с тестовым паролем  для входа FREE
+                        /* pattern: {
+                             value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}$/,
+                             message: 'Password should be correct'
+                         }*/
+                    }
+                )}
+                       placeholder={'Password'}
+                       type={'password'}
+                />
+                <div>
+                    {errors.password && <span style={{color: '#ee4916'}}>{errors.password.message}</span>}
+                    {errors.password && errors.password.type === "required" &&
+                        <span style={{color: '#ee4916'}}>This field is required</span>}
                 </div>
+            </div>
+
+            <div className={style.formButton}>
+                <button type={"submit"} className={style.btn}>Login</button>
+            </div>
 
 
         </form>
