@@ -75,7 +75,7 @@ export const Login: React.FC<LoginPropsType> = ({}) => {
                     />
                     <div>
                         {errors.email && <span style={{color: '#ee4916'}}>{errors.email.message}</span>}
-                        {errors.email && errors.email.type === "required" && <span style={{color: '#ee4916'}}>This is required</span>}
+                        {errors.email && errors.email.type === "required" && <span style={{color: '#ee4916'}}>This field is required</span>}
                     </div>
 
                 </div>
@@ -84,10 +84,11 @@ export const Login: React.FC<LoginPropsType> = ({}) => {
                     <input id="pass" {...register('password',
                         {
                             required: true, maxLength: 50,
-                            pattern: {
+                            //TODO проверка на корректность не сходится с тестовым паролем  для входа FREE
+                           /* pattern: {
                                 value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}$/,
                                 message: 'Password should be correct'
-                            }
+                            }*/
                         }
                     )}
                            placeholder={'Password'}
@@ -95,7 +96,7 @@ export const Login: React.FC<LoginPropsType> = ({}) => {
                     />
                     <div>
                         {errors.password && <span style={{color: '#ee4916'}}>{errors.password.message}</span>}
-                        {errors.password && errors.password.type === "required" && <span style={{color: '#ee4916'}}>This is required</span>}
+                        {errors.password && errors.password.type === "required" && <span style={{color: '#ee4916'}}>This field is required</span>}
                     </div>
                 </div>
 
